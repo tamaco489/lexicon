@@ -5,7 +5,6 @@ import Link from "next/link";
 export default function IndexPage() {
   return (
     <div className="flex flex-col items-center">
-      <h1>Marketing Page</h1>
       <section className="w-full pt-6 md:pt-10 lg:py-32 pb-8 md:pb-12">
         <div className="w-full max-w-4xl mx-auto px-4 text-center flex flex-col items-center gap-4">
           <Link href="/" className="bg-muted px-4 py-2 rounded-2xl font-medium text-sm">Xをフォローする</Link>
