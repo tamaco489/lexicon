@@ -14,7 +14,7 @@ export default function IndexPage() {
             href={siteConfig.links.x}
             className="bg-muted px-4 py-2 rounded-2xl font-medium text-sm"
           >
-            Xをフォローする
+            Follow on X
           </Link>
 
           {/* タイトル */}
@@ -22,7 +22,7 @@ export default function IndexPage() {
 
           {/* 説明 */}
           <p className="text-muted-foreground sm:text-xl leading-normal max-w-[42rem]">
-            このアプリケーションはNext.js AppRouterで作られたものです。ユーザは自由に投稿をpostすることができます。
+            This application is built with Next.js AppRouter. Users can freely post their content.
           </p>
         </div>
 
