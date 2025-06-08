@@ -12,7 +12,6 @@ interface MainNavProps {
 
 export default function MainNav({ items }: MainNavProps) {
 
-  // TODO: 開発しやすいように、一時的にtrueの状態に設定
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
 
   return (
@@ -21,6 +20,7 @@ export default function MainNav({ items }: MainNavProps) {
         <span className="font-bold hidden sm:inline-block">Post Writer</span>
       </Link>
 
+      {/* desktop nav */}
       <nav className="md:flex gap-6 hidden">
         {items.map((item) => (
           <Link
