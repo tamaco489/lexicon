@@ -33,7 +33,7 @@ export default function IndexPage() {
             href="/login"
             className={cn(buttonVariants({ size: "lg", variant: "default" }), "w-fit")}
           >
-            はじめる
+            Get Started
           </Link>
 
           {/* github */}

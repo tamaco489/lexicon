@@ -18,7 +18,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
               "px-4 py-2"
             )}
           >
-            ログイン
+            Login
           </Link>
         </div>
       </header>
