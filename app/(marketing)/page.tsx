@@ -53,11 +53,11 @@ export default function IndexPage() {
         {/* content description section */}
         <div className="text-center space-y-6 max-w-[58rem] mx-auto">
           <h2 className="font-extrabold text-3xl md:text-6xl">
-            サービスの特徴
+            Features
           </h2>
           <p className="text-muted-foreground sm:text-lg sm:leading-7">
-            このアプリケーションは、ユーザーが簡単に投稿を作成・管理できる便利なツールです。
-            直感的なインターフェースと豊富な機能で、あなたのコンテンツ作成をサポートします。
+            This application is a convenient tool that allows users to easily create and manage posts.
+            With an intuitive interface and rich features, we support your content creation.
           </p>
         </div>
 
@@ -193,7 +193,7 @@ export default function IndexPage() {
         {/* feature description section*/}
         <div className="mx-auto md:max-w-[58rem] text-center mt-8">
           <p className="text-muted-foreground sm:text-lg sm:leading-7">
-            Post writerは、ユーザーが簡単に投稿を作成・管理できる便利なツールです。
+            Post writer is a convenient tool that allows users to easily create and manage posts.
           </p>
         </div>
       </section>
