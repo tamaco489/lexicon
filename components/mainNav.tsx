@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { NavItem } from "@/types";
+import MobileNav from "./mobileNav";
+import { useState } from "react";
 
 interface MainNavProps {
   items: NavItem[];
@@ -7,6 +11,10 @@ interface MainNavProps {
 }
 
 export default function MainNav({ items }: MainNavProps) {
+
+  // TODO: 開発しやすいように、一時的にtrueの状態に設定
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+
   return (
     <div className="flex items-center md:gap-10 gap-2">
       <Link href={"/"} className="hidden md:flex items-center space-x-2">
@@ -24,6 +32,15 @@ export default function MainNav({ items }: MainNavProps) {
           </Link>
         ))}
       </nav>
+
+      {/* mobile nav */}
+      <button
+        className="md:hidden"
+        onClick={() => setShowMobileMenu(!showMobileMenu)}
+      >
+        <span>メニュー</span>
+      </button>
+      {showMobileMenu && <MobileNav items={items} />}
     </div>
   );
 };
