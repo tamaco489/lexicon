@@ -3,6 +3,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { marketingConfig } from "@/config/marketing";
+import SiteFooter from "@/components/siteFooter";
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -29,6 +30,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
       </main>
 
       {/* footer */}
+      <SiteFooter />
     </>
   );
 };

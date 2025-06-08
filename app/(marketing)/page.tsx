@@ -49,9 +49,9 @@ export default function IndexPage() {
       </section>
 
       {/* feature section */}
-      <section id="features" className="container py-8 md:py-12 bg-slate-50">
+      <section id="features" className="container py-8 md:py-12 bg-slate-50 flex flex-col items-center">
         {/* content description section */}
-        <div className="text-center space-y-6 max-w-[58rem] mx-auto">
+        <div className="text-center space-y-6 max-w-[58rem] w-full">
           <h2 className="font-extrabold text-3xl md:text-6xl">
             Features
           </h2>
@@ -62,7 +62,7 @@ export default function IndexPage() {
         </div>
 
         {/* feature cards section */}
-        <div className="mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 mt-12 max-w-[64rem]">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 mt-12 max-w-[64rem] w-full">
           {/* Next.js */}
           <div className="bg-background border p-2 rounded-lg">
             <div className="flex flex-col justify-between p-6 min-h-[160px] max-h-[200px]">
@@ -191,7 +191,7 @@ export default function IndexPage() {
         </div>
 
         {/* feature description section*/}
-        <div className="mx-auto md:max-w-[58rem] text-center mt-8">
+        <div className="md:max-w-[58rem] text-center mt-8 w-full">
           <p className="text-muted-foreground sm:text-lg sm:leading-7">
             Post writer is a convenient tool that allows users to easily create and manage posts.
           </p>
@@ -199,8 +199,8 @@ export default function IndexPage() {
       </section>
 
       {/* contact section */}
-      <section id="contact" className="container py-8 md:py-12 lg:py-24">
-        <div className="max-w-[58rem] mx-auto text-center flex flex-col items-center gap-4">
+      <section id="contact" className="container py-8 md:py-12 lg:py-24 flex flex-col items-center">
+        <div className="max-w-[58rem] text-center flex flex-col items-center gap-4 w-full">
           <h2 className="font-extrabold text-3xl md:text-6xl">
             Contact Me
           </h2>
