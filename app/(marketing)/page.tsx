@@ -50,7 +50,7 @@ export default function IndexPage() {
 
       {/* feature section */}
       <section id="features" className="container py-8 md:py-12 bg-slate-50">
-        {/* content description */}
+        {/* content description section */}
         <div className="text-center space-y-6 max-w-[58rem] mx-auto">
           <h2 className="font-extrabold text-3xl md:text-6xl">
             サービスの特徴
@@ -61,7 +61,7 @@ export default function IndexPage() {
           </p>
         </div>
 
-        {/* feature cards */}
+        {/* feature cards section */}
         <div className="mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 mt-12 max-w-[64rem]">
           {/* Next.js */}
           <div className="bg-background border p-2 rounded-lg">
@@ -190,10 +190,12 @@ export default function IndexPage() {
           </div>
         </div>
 
-        {/* ? */}
-        {/* <div>
-          <p>Post writerは、ユーザーが簡単に投稿を作成・管理できる便利なツールです。</p>
-        </div> */}
+        {/* feature description section*/}
+        <div className="mx-auto md:max-w-[58rem] text-center mt-8">
+          <p className="text-muted-foreground sm:text-lg sm:leading-7">
+            Post writerは、ユーザーが簡単に投稿を作成・管理できる便利なツールです。
+          </p>
+        </div>
       </section>
     </div>
   );
