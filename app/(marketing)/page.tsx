@@ -14,7 +14,7 @@ export default function IndexPage() {
             href={siteConfig.links.x}
             className="bg-muted px-4 py-2 rounded-2xl font-medium text-sm"
           >
-            Xをフォローする
+            Follow on X
           </Link>
 
           {/* タイトル */}
@@ -22,7 +22,7 @@ export default function IndexPage() {
 
           {/* 説明 */}
           <p className="text-muted-foreground sm:text-xl leading-normal max-w-[42rem]">
-            このアプリケーションはNext.js AppRouterで作られたものです。ユーザは自由に投稿をpostすることができます。
+            This application is built with Next.js AppRouter. Users can freely post their content.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function IndexPage() {
             href="/login"
             className={cn(buttonVariants({ size: "lg", variant: "default" }), "w-fit")}
           >
-            はじめる
+            Get Started
           </Link>
 
           {/* github */}
@@ -53,11 +53,11 @@ export default function IndexPage() {
         {/* content description section */}
         <div className="text-center space-y-6 max-w-[58rem] mx-auto">
           <h2 className="font-extrabold text-3xl md:text-6xl">
-            サービスの特徴
+            Features
           </h2>
           <p className="text-muted-foreground sm:text-lg sm:leading-7">
-            このアプリケーションは、ユーザーが簡単に投稿を作成・管理できる便利なツールです。
-            直感的なインターフェースと豊富な機能で、あなたのコンテンツ作成をサポートします。
+            This application is a convenient tool that allows users to easily create and manage posts.
+            With an intuitive interface and rich features, we support your content creation.
           </p>
         </div>
 
@@ -193,8 +193,32 @@ export default function IndexPage() {
         {/* feature description section*/}
         <div className="mx-auto md:max-w-[58rem] text-center mt-8">
           <p className="text-muted-foreground sm:text-lg sm:leading-7">
-            Post writerは、ユーザーが簡単に投稿を作成・管理できる便利なツールです。
+            Post writer is a convenient tool that allows users to easily create and manage posts.
           </p>
+        </div>
+      </section>
+
+      {/* contact section */}
+      <section id="contact" className="container py-8 md:py-12 lg:py-24">
+        <div className="max-w-[58rem] mx-auto text-center flex flex-col items-center gap-4">
+          <h2 className="font-extrabold text-3xl md:text-6xl">
+            Contact Me
+          </h2>
+          <p className="text-muted-foreground sm:text-lg sm:leading-7">
+            Post writer is a convenient tool that allows users to easily create and manage posts.
+            <br />
+            I look forward to hearing from you about work opportunities.
+          </p>
+          <div className="flex flex-row items-center justify-center gap-4">
+            <Link
+              href={siteConfig.links.x}
+              className="underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Work opportunities are welcome on X.
+            </Link>
+          </div>
         </div>
       </section>
     </div>

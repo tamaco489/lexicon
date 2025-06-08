@@ -38,7 +38,7 @@ export default function MainNav({ items }: MainNavProps) {
         className="md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
-        <span>メニュー</span>
+        <span>Menu</span>
       </button>
       {showMobileMenu && <MobileNav items={items} />}
     </div>
