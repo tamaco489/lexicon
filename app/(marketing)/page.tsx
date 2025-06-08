@@ -197,6 +197,30 @@ export default function IndexPage() {
           </p>
         </div>
       </section>
+
+      {/* contact section */}
+      <section id="contact" className="container py-8 md:py-12 lg:py-24">
+        <div className="max-w-[58rem] mx-auto text-center flex flex-col items-center gap-4">
+          <h2 className="font-extrabold text-3xl md:text-6xl">
+            Contact Me
+          </h2>
+          <p className="text-muted-foreground sm:text-lg sm:leading-7">
+            Post writer is a convenient tool that allows users to easily create and manage posts.
+            <br />
+            I look forward to hearing from you about work opportunities.
+          </p>
+          <div className="flex flex-row items-center justify-center gap-4">
+            <Link
+              href={siteConfig.links.x}
+              className="underline underline-offset-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Work opportunities are welcome on X.
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
