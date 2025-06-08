@@ -2,10 +2,35 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Post Writer",
-  description: "Post Writer is a convenient tool that allows users to easily create and manage posts.",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`, // 子要素で meda-data を追加で設定するためのテンプレートの設定 ※ `%s` に子要素のメタデータが入る
+  },
+  description: siteConfig.description,
+  keywords: ["Next.js", "React", "Tailwind CSS", "Shadcn UI"],
+  authors: [{
+    name: "Yukihiko Kawasaki",
+    url: "https://x.com/yukihiko_kawasaki"
+  }],
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    images: [`${siteConfig.url}/og.png`],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [`${siteConfig.url}/og.png`],
+  },
 };
 
 // Noto Sans JPフォントの設定
