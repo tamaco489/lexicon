@@ -32,6 +32,6 @@ export const siteConfig: SiteConfig = {
     x: "https://x.com/yukihiko_kawasaki",
 
     /** GitHubのリポジトリURL */
-    github: "https://github.com/yukihiko-kawasaki/post-writer",
+    github: "https://github.com/tamaco489/lexicon",
   },
 };
