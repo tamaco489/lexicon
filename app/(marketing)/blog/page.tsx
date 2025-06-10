@@ -1,9 +1,9 @@
 import { allPosts } from "@/.contentlayer/generated";
 import Image from "next/image";
+import { format } from "date-fns";
 
 export default function BlogPage() {
   const posts = allPosts;
-  console.log('ログです', posts);
 
   return (
     <div className="container max-w-4xl py-6 lg:py-10 mx-auto">
@@ -33,7 +33,7 @@ export default function BlogPage() {
           <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
           <p className="text-muted-foreground">{post.description}</p>
           <p className="text-muted-foreground">{post.author}</p>
-          <p className="text-muted-foreground">{post.date}</p>
+          <p className="text-muted-foreground">{format(post.date, 'yyyy-MM-dd')}</p>
         </div>
       ))}
     </div>
