@@ -1,6 +1,7 @@
 import { allPosts } from "@/.contentlayer/generated";
 import Image from "next/image";
 import { format } from "date-fns";
+import Link from "next/link";
 
 export default function BlogPage() {
   const posts = allPosts;
@@ -14,28 +15,33 @@ export default function BlogPage() {
         </div>
       </div>
       <hr className="my-8" />
-      {posts.map((post, index) => (
-        <div key={index} className="mb-8 p-6 border rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          {post.image && (
-            <div className="relative w-full aspect-video mb-4">
-              {post.image && (
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover rounded-lg"
-                  priority={index === 0}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              )}
-            </div>
-          )}
-          <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
-          <p className="text-muted-foreground">{post.description}</p>
-          <p className="text-muted-foreground">{post.author}</p>
-          <p className="text-muted-foreground">{format(post.date, 'yyyy-MM-dd')}</p>
-        </div>
-      ))}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {posts.map((post, index) => (
+          <article key={index} className="mb-8 p-6 border rounded-lg shadow-sm hover:shadow-md transition-shadow relative">
+            {post.image && (
+              <div className="relative w-full aspect-video mb-4">
+                {post.image && (
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover rounded-lg"
+                    priority={index === 0}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                )}
+              </div>
+            )}
+            <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
+            <p className="text-muted-foreground">{post.description}</p>
+            <p className="text-muted-foreground">{post.author}</p>
+            <p className="text-muted-foreground">{format(post.date, 'yyyy-MM-dd')}</p>
+
+            <Link href={`/blog/${post.slug}`} className="absolute inset-0"></Link>
+          </article>
+        ))}
+      </div>
     </div>
   );
 };
