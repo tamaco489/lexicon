@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
@@ -36,9 +37,12 @@ export const metadata: Metadata = {
 // Noto Sans JPフォントの設定
 // - weight: フォントの太さを 400 (Regular) と 700 (Bold) に設定
 // - subsets: ラテン文字のサブセットを使用
+// - preload: フォントを事前に読み込む
 const fontNnotoSansJP = Noto_Sans_JP({
-  weight: ["400", "700"], // ※不要な weight は読み込まなくなるためバンドルサイズが小さくなり、読み込みを高速化させる。
+  weight: ["400", "700"],
   subsets: ["latin"],
+  preload: true,
+  display: "swap",
 });
 
 export default function RootLayout({
