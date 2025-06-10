@@ -1,0 +1,171 @@
+---
+title: My First Post
+date: 2021-12-24
+description: This is a description of my first post.
+published: true
+image: /images/blog/post-1.jpg
+author: tamaco
+---
+
+Ullamco et nostrud magna commodo nostrud ...
+
+# はじめに
+
+こんにちは！この記事では、Next.jsとContentlayerを使用したブログの構築について説明します。
+
+## なぜNext.jsとContentlayerなのか？
+
+Next.jsは、Reactベースのフレームワークで、以下のような利点があります：
+
+- サーバーサイドレンダリング（SSR）のサポート
+- ファイルベースのルーティング
+- 優れたパフォーマンス
+- 豊富なエコシステム
+
+Contentlayerは、コンテンツを型安全に管理できるツールで、以下の特徴があります：
+
+- TypeScriptのサポート
+- MDXのサポート
+- コンテンツの自動型生成
+- 優れた開発者体験
+
+## 基本的なセットアップ
+
+まず、必要なパッケージをインストールします：
+
+```bash
+npm install next contentlayer
+```
+
+次に、`next.config.js`を設定します：
+
+```js
+
+module.exports = {
+  experimental: {
+    ppr: true,
+  },
+};
+```
+
+次に、`contentlayer.config.ts`を作成します： 
+
+```ts
+import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+
+export const Post = defineDocumentType(() => ({
+  name: 'Post',
+  filePathPattern: `blog/**/*.mdx`,
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    description: {
+      type: 'string',
+      required: true,
+    },
+    date: {
+      type: 'date',
+      required: true,
+    },
+    published: {
+      type: 'boolean',
+      required: true,
+      default: true,
+    },
+    image: {
+      type: 'string',
+      required: false,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => `${doc._raw.flattenedPath}`,
+    },
+  },
+}));
+
+const config = makeSource({
+  contentDirPath: './content',
+  documentTypes: [Post],
+});
+
+export default config;
+```
+
+次に、`app/blog/page.tsx`を作成します：
+
+```tsx
+
+import { allPosts } from '@/contentlayer.config';
+
+export default function BlogPage() {
+  return (
+    <div>
+      <h1>Blog</h1>
+
+      <ul>
+        {allPosts.map((post) => (
+          <li key={post._id}>
+            <Link href={post.url}>{post.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+# テーブル形式の表現
+
+MDXでは、Markdownのテーブル記法を使用してテーブルを表現することができます。以下に例を示します：
+
+| 名前 | 年齢 | 職業 |
+|------|------|------|
+| 田中 | 25 | エンジニア |
+| 佐藤 | 30 | デザイナー |
+| 鈴木 | 28 | マーケター |
+
+## テーブルのスタイリング
+
+テーブルには以下のようなスタイルを適用することもできます：
+
+| 商品名 | 価格 | 在庫 |
+|:------|:----:|------:|
+| 商品A | ¥1,000 | 10 |
+| 商品B | ¥2,000 | 5 |
+| 商品C | ¥3,000 | 0 |
+
+- `:---` 左揃え
+- `:---:` 中央揃え
+- `---:` 右揃え
+
+## 複雑なテーブル
+
+必要に応じて、HTMLの`<table>`タグを使用してより複雑なテーブルを作成することもできます：
+
+<table className="custom-table">
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>説明</th>
+      <th>備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>機能A</td>
+      <td>基本的な機能</td>
+      <td>必須</td>
+    </tr>
+    <tr>
+      <td>機能B</td>
+      <td>拡張機能</td>
+      <td>オプション</td>
+    </tr>
+  </tbody>
+</table>
+
+このように、MDXでは様々な方法でテーブルを表現することができます。
