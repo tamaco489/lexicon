@@ -7,12 +7,12 @@ export default function SiteFotter() {
         <p className="text-center text-sm text-muted-foreground">
           Built by
           <Link
-            href="https://x.com/yukihiko_kawasaki"
+            href="https://x.com/tamaco"
             className="underline underline-offset-4"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Yukihiko Kawasaki
+            tamaco
           </Link>
 
           <span className="text-muted-foreground">

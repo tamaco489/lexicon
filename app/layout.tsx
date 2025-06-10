@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: ["Next.js", "React", "Tailwind CSS", "Shadcn UI"],
   authors: [{
-    name: "Yukihiko Kawasaki",
-    url: "https://x.com/yukihiko_kawasaki"
+    name: "tamaco",
+    url: "https://x.com/tamaco"
   }],
   icons: {
     icon: "/favicon.ico",
