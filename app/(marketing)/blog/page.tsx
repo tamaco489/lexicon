@@ -11,7 +11,7 @@ export default function BlogPage() {
       <div>
         <div className="space-y-4 text-center">
           <h1 className="font-extrabold text-4xl lg:text-5xl tracking-tight">Blog🚀</h1>
-          <p className="text-muted-foreground text-xl">Contentlayerで作成したブログです。</p>
+          <p className="text-muted-foreground text-xl">A blog created with Contentlayer.</p>
         </div>
       </div>
       <hr className="my-8" />
