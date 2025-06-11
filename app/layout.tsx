@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
-import "./globals.css";
-import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: {
@@ -34,17 +32,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Noto Sans JPフォントの設定
-// - weight: フォントの太さを 400 (Regular) と 700 (Bold) に設定
-// - subsets: ラテン文字のサブセットを使用
-// - preload: フォントを事前に読み込む
-const fontNnotoSansJP = Noto_Sans_JP({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  preload: true,
-  display: "swap",
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={cn(fontNnotoSansJP.className, "bg-background antialiased min-h-screen")}>
+      <body className="bg-background antialiased min-h-screen">
         {children}
       </body>
     </html>
