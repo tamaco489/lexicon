@@ -28,7 +28,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   // Render blog post page
   return (
-    <article className="container max-w-3xl py-6 lg:py-10 mx-auto">
+    <article className="container max-w-3xl py-6 lg:py-10 mx-auto px-4 sm:px-6">
       {/* Post title and date */}
       <div className="text-center">
         {post.date && (
