@@ -7,6 +7,7 @@ import { ArrowLeftIcon } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Mdx from "@/components/mdx";
+import { Metadata } from "next";
 
 // Get post by slug
 async function getPost(slug: string) {
@@ -17,6 +18,28 @@ async function getPost(slug: string) {
   if (!post) { return notFound() }
 
   return post;
+};
+
+// Generate dynamic metadata
+export async function generateMetadata({ params, }: { params: { slug: string }; }): Promise<Metadata> {
+  // Get slug from params
+  const { slug } = params;
+  const post = await getPost(slug);
+  if (!post) return {};
+
+  // Get image from post
+  const image = post.image || "";
+
+  // Generate metadata
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      images: [image],
+    },
+  };
 };
 
 // Blog post page
