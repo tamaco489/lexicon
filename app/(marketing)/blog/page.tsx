@@ -38,7 +38,7 @@ export default function BlogPage() {
             <p className="text-muted-foreground">{post.author}</p>
             <p className="text-muted-foreground">{format(post.date, 'yyyy-MM-dd')}</p>
 
-            <Link href={`/blog/${post.slug}`} className="absolute inset-0"></Link>
+            <Link href={`/${post.slug}`} className="absolute inset-0"></Link>
           </article>
         ))}
       </div>
