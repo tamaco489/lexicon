@@ -3,11 +3,12 @@ import { format } from "date-fns";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ArrowLeftIcon } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Mdx from "@/components/mdx";
 
+// Get post by slug
 async function getPost(slug: string) {
   // slugAsParams is [slug]
   const post = allPosts.find((post) => post.slugAsParams === slug);
@@ -18,13 +19,17 @@ async function getPost(slug: string) {
   return post;
 };
 
+// Blog post page
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
 
+  // Get slug from params
   const { slug } = await params;
   const post = await getPost(slug);
 
+  // Render blog post page
   return (
     <article className="container max-w-3xl py-6 lg:py-10 mx-auto">
+      {/* Post title and date */}
       <div className="text-center">
         {post.date && (
           <time>{format(post.date, 'yyyy-MM-dd')}</time>
@@ -33,6 +38,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           {post.title}
         </h1>
       </div>
+
+      {/* Post image */}
       <div className="mt-6 space-y-4 flex justify-center">
         {post.image && (
           <Image
@@ -45,9 +52,13 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           />
         )}
       </div>
-      <div className="">
-        {post.body.html}
-      </div>
+
+      {/* Post content */}
+      <Mdx code={post.body.code} />
+
+      <hr className="my-12" />
+
+      {/* Back to blog */}
       <div className="mt-6 space-y-4 flex justify-center">
         <Link
           href="/blog"
